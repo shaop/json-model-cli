@@ -2,7 +2,7 @@
 
 @implementation test
 
-+ (NSDictionary *)modelCustomPropertyMapper {
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{@"attitudesStatus" : @"attitudes_status",
              @"createdAt" : @"created_at",
              @"inReplyToScreenName" : @"in_reply_to_screen_name",
@@ -19,42 +19,38 @@
              @"attitudesCount" : @"attitudes_count",
              @"darwinTags" : @"darwin_tags",
              @"inReplyToUserId" : @"in_reply_to_user_id",
-             @"originalPic" : @"original_pic",
-             @"undefined" : @"undefined"
-      }];
+             @"originalPic" : @"original_pic"
+      };
 }
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"Annotations" : [annotations class],
-             @"undefined" : [undefined class]
-      }];
-}
-
-@end
-
-@implementation HLTVisible
-
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"listId" : @"list_id",
-             @"undefined" : @"undefined"
-      }];
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"annotations" : [Annotations class]
+      };
 }
 
 @end
 
-@implementation HLTAnnotations
+@implementation Visible
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"clientMblogid" : @"client_mblogid",
-             @"undefined" : @"undefined"
-      }];
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{@"listId" : @"list_id"
+      };
 }
 
 @end
 
-@implementation HLTUser
+@implementation Annotations
 
-+ (NSDictionary *)modelCustomPropertyMapper {
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{@"clientMblogid" : @"client_mblogid"
+      };
+}
+
+@end
+
+@implementation User
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{@"coverImagePhone" : @"cover_image_phone",
              @"biFollowersCount" : @"bi_followers_count",
              @"profileImageUrl" : @"profile_image_url",
@@ -90,44 +86,41 @@
              @"favouritesCount" : @"favourites_count",
              @"verifiedType" : @"verified_type",
              @"verifiedSource" : @"verified_source",
-             @"userAbility" : @"user_ability",
-             @"undefined" : @"undefined"
-      }];
+             @"userAbility" : @"user_ability"
+      };
 }
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"Icons" : [icons class],
-             @"undefined" : [undefined class]
-      }];
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"icons" : [Icons class]
+      };
 }
 
 @end
 
-@implementation HLTExtend
+@implementation Extend
 
 @end
 
-@implementation HLTPrivacy
+@implementation Privacy
 
 @end
 
-@implementation HLTBadge
+@implementation Badge
 
-+ (NSDictionary *)modelCustomPropertyMapper {
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{@"gongyiLevel" : @"gongyi_level",
              @"suishoupai2014" : @"suishoupai_2014",
              @"hongbao2014" : @"hongbao_2014",
              @"dzwbqlv2015" : @"dzwbqlv_2015",
              @"ucDomain" : @"uc_domain",
              @"bindTaobao" : @"bind_taobao",
-             @"pzsd2015" : @"pzsd_2015",
-             @"undefined" : @"undefined"
-      }];
+             @"pzsd2015" : @"pzsd_2015"
+      };
 }
 
 @end
 
-@implementation HLTIcons
+@implementation Icons
 
 @end
 

@@ -4,6 +4,7 @@ let program = require('commander');
 let hjm = require('./HandyJSONManager.js');
 let jmm = require('./JSONModelManager.js');
 let yym = require('./YYModelManager.js');
+let mjm = require('./MJExtensionManager.js');
 let path = require('path');
 let readline = require('readline');
 let colors = require('colors');
@@ -48,7 +49,8 @@ if (program.input) {
                     jmm.execute(myPath, prefixAnswer, ['pic_infos']);
                     console.log('\ndone'.blue);
                 }else if (answer === '2') {
-
+                    mjm.execute(myPath, prefixAnswer, ['pic_infos']);
+                    console.log('\ndone'.blue);
                 }else if (answer === '3') {
                     yym.execute(myPath, prefixAnswer, ['pic_infos']);
                     console.log('\ndone'.blue);

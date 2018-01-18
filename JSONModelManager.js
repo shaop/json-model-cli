@@ -32,7 +32,7 @@ let jmm = {
         if (classs.length !== 0) {
             header += '@class';
             for(let i = 0; i < classs.length; i ++){
-                if (i === '0') {
+                if (i === 0) {
                     header += ' '+classs[i];
                 }else {
                     header += ', '+classs[i];
@@ -45,7 +45,7 @@ let jmm = {
         if (protocol.length !== 0) {
             header += '@protocol';
             for (let i = 0; i < protocol.length; i ++) {
-                if (i === '0') {
+                if (i === 0) {
                     header += ' '+protocol[i];
                 }else {
                     header += ', '+protocol[i];
@@ -79,7 +79,7 @@ let jmm = {
 doJMData = (data,index,className,ignore) => {
     let mapper = []; // 设置 mapper
 
-    let class_block = '@interface ' + className + ' : JSONModel {\n\n';
+    let class_block = '@interface ' + className + ' : JSONModel \n\n';
     for(let key in data) {
         // 过滤选项
         if (ignore.contains(key)) {
@@ -117,11 +117,11 @@ doJMData = (data,index,className,ignore) => {
     let mimpRes = '@implementation '+ className + '\n';
     if (mapper.length > 0) {
         mimpRes  += '\n+ (JSONKeyMapper *)keyMapper{\n      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{\n';
-        for (let index in mapper) {
-            if (index === '0'){
-                mimpRes  += '         @"' + mapper[index].value + '" : @"' + mapper[index].key+'"';
+        for (let i = 0; i < mapper.length; i ++) {
+            if (i === 0){
+                mimpRes  += '         @"' + mapper[i].value + '" : @"' + mapper[i].key+'"';
             }else {
-                mimpRes  += ',\n         @"' + mapper[index].value + '" : @"' + mapper[index].key+'"';
+                mimpRes  += ',\n         @"' + mapper[i].value + '" : @"' + mapper[i].key+'"';
             }
         }
         mimpRes += '\n      }];\n}\n';
