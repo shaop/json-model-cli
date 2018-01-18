@@ -3,6 +3,7 @@
 let program = require('commander');
 let hjm = require('./HandyJSONManager.js');
 let jmm = require('./JSONModelManager.js');
+let yym = require('./YYModelManager.js');
 let path = require('path');
 let readline = require('readline');
 let colors = require('colors');
@@ -44,12 +45,13 @@ if (program.input) {
             mrl.question('\nadd a prefix? > ', function(prefixAnswer){
 
                 if (answer === '1' || answer === '') {
-                    jmm.execute(myPath, prefixAnswer);
+                    jmm.execute(myPath, prefixAnswer, ['pic_infos']);
                     console.log('\ndone'.blue);
                 }else if (answer === '2') {
 
                 }else if (answer === '3') {
-
+                    yym.execute(myPath, prefixAnswer, ['pic_infos']);
+                    console.log('\ndone'.blue);
                 }else {
                     console.log('\nerror: please input right number'.red);
                 }

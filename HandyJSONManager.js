@@ -42,28 +42,35 @@ doHdData = (data,index,className,ignore) => {
             continue;
         }
 
+        // 先判断是否有特殊符号
         let regExp = /((?=[\x21-\x7e]+)[^A-Za-z0-9])/;
         if (regExp.test(key)) {
             mapper.push({key,value:CamelCase(key)});
         }
 
         if (data[key] instanceof Array) {
-            doHdData(data[key][0], index + 1, ClassCase(key),ignore);
-            class_block = class_block + '   var '+CamelCase(key)+': Array<' + ClassCase(CamelCase(key)) + '>?\n';
+            if (data[key][0] instanceof Object) {
+                doHdData(data[key][0], index + 1, ClassCase(CamelCase(key)),ignore);
+                class_block += '   var '+CamelCase(key)+': Array<' + ClassCase(CamelCase(key)) + '>?\n';
+            }else {
+                class_block += '   var '+CamelCase(key)+': Array?\n';
+            }
         } else if (data[key] instanceof Object) {
-            doHdData(data[key], index + 1, ClassCase(key),ignore);
-            class_block = class_block + '   var '+CamelCase(key)+': ' + ClassCase(CamelCase(key)) + '?\n';
+            doHdData(data[key], index + 1, ClassCase(CamelCase(key)),ignore);
+            class_block += '   var '+CamelCase(key)+': ' + ClassCase(CamelCase(key)) + '?\n';
         } else if (typeof data[key] === 'string') {
-            class_block = class_block + '   var '+CamelCase(key)+': String?\n';
+            class_block += '   var '+CamelCase(key)+': String?\n';
         } else if (typeof data[key] === 'number') {
             if(parseInt(data[key])===data[key]) {
-                class_block = class_block + '   var '+CamelCase(key)+': Int?\n';
+                class_block += '   var '+CamelCase(key)+': Int?\n';
             }else {
-                class_block = class_block + '   var '+CamelCase(key)+': Float?\n';
+                class_block += '   var '+CamelCase(key)+': Float?\n';
             }
+        } else if (typeof data[key] === 'boolean') {
+            class_block += '   var '+CamelCase(key)+': Bool?\n';
         }
     }
-    class_block = class_block + '\n   required init() {} \n';
+    class_block += '\n   required init() {} \n';
     if (mapper.length > 0) {
         class_block += '\n   func mapping(mapper: HelpingMapper) {\n\n';
         for (let index in mapper) {

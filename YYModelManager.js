@@ -1,5 +1,5 @@
 /**
- * Created by chenxiaopeng on 2018/1/17.
+ * Created by chenxiaopeng on 2018/1/18.
  */
 let path = require("path");
 let fs = require('fs');
@@ -18,12 +18,12 @@ Array.prototype.contains = function ( needle ) {
     return false;
 };
 
-let jmm = {
+let yym = {
     execute:function(file_path,mprefix, ignore) {
         prefix = mprefix;
 
         let data = JSON.parse(fs.readFileSync(file_path));
-        doJMData(data, 0, path.basename(file_path,'.h'), ignore);
+        doYYData(data, 0, path.basename(file_path,'.h'), ignore);
 
         let header = '#import <JSONModel/JSONModel.h>\n\n';
 
@@ -76,10 +76,11 @@ let jmm = {
 };
 
 // 操作数据
-doJMData = (data,index,className,ignore) => {
+doYYData = (data,index,className,ignore) => {
     let mapper = []; // 设置 mapper
+    let arrayDic = [];
 
-    let class_block = '@interface ' + className + ' : JSONModel {\n\n';
+    let class_block = '@interface ' + className + ' : NSObject {\n\n';
     for(let key in data) {
         // 过滤选项
         if (ignore.contains(key)) {
@@ -91,24 +92,26 @@ doJMData = (data,index,className,ignore) => {
             mapper.push({key,value:CamelCase(key)});
         }
 
+
         if (data[key] instanceof Array) {
             if (data[key][0] instanceof Object) {
-                doJMData(data[key][0], index + 1, ClassCase(CamelCase(key),prefix), ignore);
-                protocol.push(ClassCase(CamelCase(key)));
-                class_block += '@property (nonatomic, strong) NSArray<'+ClassCase(CamelCase(key),prefix)+ '> *' + CamelCase(key) +';\n';
-            }else {
-                class_block += '@property (nonatomic, strong) NSArray *' + CamelCase(key) +';\n';
+                doYYData(data[key][0], index + 1, ClassCase(CamelCase(key), prefix), ignore);
+                arrayDic.push({key: CamelCase(key),value: ClassCase(CamelCase(key))});
             }
+            class_block += '@property (nonatomic, strong) NSArray *' + CamelCase(key) +';\n';
         } else if (data[key] instanceof Object) {
-            doJMData(data[key], index + 1, ClassCase(CamelCase(key),prefix), ignore);
-            classs.push(ClassCase(CamelCase(key),prefix));
+            doYYData(data[key], index + 1, ClassCase(CamelCase(key),prefix), ignore);
             class_block += '@property (nonatomic, strong) ' + ClassCase(CamelCase(key),prefix) + ' *' + CamelCase(key) +';\n';
         } else if (typeof data[key] === 'string') {
             class_block += '@property (nonatomic, strong) NSString' + ' *' + CamelCase(key) +';\n';
         } else if (typeof data[key] === 'number') {
-            class_block += '@property (nonatomic, strong) NSNumber' + ' *' + CamelCase(key) +';\n'
+            if(parseInt(data[key])===data[key]) {
+                class_block += '@property (nonatomic, assign) int ' + CamelCase(key) +';\n'
+            }else {
+                class_block += '@property (nonatomic, assign) float ' + CamelCase(key) +';\n'
+            }
         } else if (typeof data[key] === 'boolean') {
-            class_block += '@property (nonatomic, assign) BOOL' + ' ' + CamelCase(key) +';\n'
+            class_block += '@property (nonatomic, assign) BOOL ' + CamelCase(key) +';\n'
         }
     }
     class_block += '\n@end\n\n';
@@ -116,18 +119,31 @@ doJMData = (data,index,className,ignore) => {
 
     let mimpRes = '@implementation '+ className + '\n';
     if (mapper.length > 0) {
-        mimpRes  += '\n+ (JSONKeyMapper *)keyMapper{\n      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{\n';
+        mimpRes  += '\n+ (NSDictionary *)modelCustomPropertyMapper {\n    return @{';
         for (let index in mapper) {
             if (index === '0'){
-                mimpRes  += '         @"' + mapper[index].value + '" : @"' + mapper[index].key+'"';
+                mimpRes  += '@"' + mapper[index].value + '" : @"' + mapper[index].key+'"';
             }else {
-                mimpRes  += ',\n         @"' + mapper[index].value + '" : @"' + mapper[index].key+'"';
+                mimpRes  += ',\n             @"' + mapper[index].value + '" : @"' + mapper[index].key+'"';
             }
         }
         mimpRes += '\n      }];\n}\n';
     }
+
+    if (arrayDic.length > 0) {
+        mimpRes += '\n+ (NSDictionary *)modelContainerPropertyGenericClass {\n    return @{';
+        for (let index in arrayDic) {
+            if (index === '0'){
+                mimpRes  += '@"' + arrayDic[index].value + '" : [' + arrayDic[index].key+' class]';
+            }else {
+                mimpRes  += ',\n             @"' + arrayDic[index].value + '" : [' + arrayDic[index].key+' class]';
+            }
+        }
+        mimpRes += '\n      }];\n}\n';
+    }
+
     impRes = mimpRes + '\n@end\n\n' + impRes;
 
 };
 
-module.exports=jmm;
+module.exports=yym;
