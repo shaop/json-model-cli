@@ -3,11 +3,12 @@
  */
 let path = require("path");
 let fs = require('fs');
-require('./letterTool');
+require('./../tool/letterTool');
 
 let res = '';
 let impRes = '';
 let prefix = '';
+
 
 Array.prototype.contains = function ( needle ) {
     for (i in this) {
@@ -16,14 +17,14 @@ Array.prototype.contains = function ( needle ) {
     return false;
 };
 
-let yym = {
+let mjm = {
     execute:function(file_path,mprefix, ignore) {
         prefix = mprefix;
 
         let data = JSON.parse(fs.readFileSync(file_path));
-        doYYData(data, 0, path.basename(file_path,'.h'), ignore);
+        doMJData(data, 0, path.basename(file_path,'.h'), ignore);
 
-        let header = '#import <YYModel/YYModel.h>\n\n';
+        let header = '#import "MJExtension.h"\n\n';
         res = header + res;
 
         // 写import
@@ -47,11 +48,12 @@ let yym = {
 };
 
 // 操作数据
-doYYData = (data,index,className,ignore) => {
+doMJData = (data,index,className,ignore) => {
     let mapper = []; // 设置 mapper
     let arrayDic = [];
 
     let class_block = '@interface ' + className + ' : NSObject \n\n';
+    // 写参数
     for(let key in data) {
         // 过滤选项
         if (ignore.contains(key)) {
@@ -66,15 +68,15 @@ doYYData = (data,index,className,ignore) => {
 
         if (data[key] instanceof Array) {
             if (data[key][0] instanceof Object) {
-                doYYData(data[key][0], index + 1, ClassCase(CamelCase(key), prefix), ignore);
+                doMJData(data[key][0], index + 1, ClassCase(CamelCase(key), prefix), ignore);
                 arrayDic.push({key: ClassCase(CamelCase(key)),value: CamelCase(key)});
             }
             class_block += '@property (nonatomic, strong) NSArray *' + CamelCase(key) +';\n';
         } else if (data[key] instanceof Object) {
-            doYYData(data[key], index + 1, ClassCase(CamelCase(key),prefix), ignore);
+            doMJData(data[key], index + 1, ClassCase(CamelCase(key),prefix), ignore);
             class_block += '@property (nonatomic, strong) ' + ClassCase(CamelCase(key),prefix) + ' *' + CamelCase(key) +';\n';
         } else if (typeof data[key] === 'string') {
-            class_block += '@property (nonatomic, strong) NSString' + ' *' + CamelCase(key) +';\n';
+            class_block += '@property (nonatomic, copy) NSString' + ' *' + CamelCase(key) +';\n';
         } else if (typeof data[key] === 'number') {
             if(parseInt(data[key])===data[key]) {
                 class_block += '@property (nonatomic, assign) int ' + CamelCase(key) +';\n'
@@ -88,9 +90,11 @@ doYYData = (data,index,className,ignore) => {
     class_block += '\n@end\n\n';
     res = class_block + res;
 
+    // 写.m
     let mimpRes = '@implementation '+ className + '\n';
+    // 写映射
     if (mapper.length > 0) {
-        mimpRes  += '\n+ (NSDictionary *)modelCustomPropertyMapper {\n    return @{';
+        mimpRes  += '\n+ (NSDictionary *)mj_replacedKeyFromPropertyName {\n    return @{';
         for (let i = 0; i < mapper.length; i ++) {
             if (i === 0){
                 mimpRes  += '@"' + mapper[i].value + '" : @"' + mapper[i].key+'"';
@@ -101,8 +105,9 @@ doYYData = (data,index,className,ignore) => {
         mimpRes += '\n      };\n}\n';
     }
 
+    // 写数组
     if (arrayDic.length > 0) {
-        mimpRes += '\n+ (NSDictionary *)modelContainerPropertyGenericClass {\n    return @{';
+        mimpRes += '\n+ (NSDictionary *)mj_objectClassInArray {\n    return @{';
         for (let i = 0; i < arrayDic.length; i ++) {
             if (i === 0){
                 mimpRes  += '@"' + arrayDic[i].value + '" : [' + arrayDic[i].key+' class]';
@@ -117,4 +122,4 @@ doYYData = (data,index,className,ignore) => {
 
 };
 
-module.exports=yym;
+module.exports=mjm;

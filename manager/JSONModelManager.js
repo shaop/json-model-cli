@@ -3,7 +3,7 @@
  */
 let path = require("path");
 let fs = require('fs');
-require('./letterTool');
+require('./../tool/letterTool');
 
 let res = '';
 let impRes = '';
@@ -80,6 +80,7 @@ doJMData = (data,index,className,ignore) => {
     let mapper = []; // 设置 mapper
 
     let class_block = '@interface ' + className + ' : JSONModel \n\n';
+    // 写参数
     for(let key in data) {
         // 过滤选项
         if (ignore.contains(key)) {
@@ -104,7 +105,7 @@ doJMData = (data,index,className,ignore) => {
             classs.push(ClassCase(CamelCase(key),prefix));
             class_block += '@property (nonatomic, strong) ' + ClassCase(CamelCase(key),prefix) + ' *' + CamelCase(key) +';\n';
         } else if (typeof data[key] === 'string') {
-            class_block += '@property (nonatomic, strong) NSString' + ' *' + CamelCase(key) +';\n';
+            class_block += '@property (nonatomic, copy) NSString' + ' *' + CamelCase(key) +';\n';
         } else if (typeof data[key] === 'number') {
             class_block += '@property (nonatomic, strong) NSNumber' + ' *' + CamelCase(key) +';\n'
         } else if (typeof data[key] === 'boolean') {
@@ -114,7 +115,9 @@ doJMData = (data,index,className,ignore) => {
     class_block += '\n@end\n\n';
     res = class_block + res;
 
+    // 写 .m
     let mimpRes = '@implementation '+ className + '\n';
+    // 写映射
     if (mapper.length > 0) {
         mimpRes  += '\n+ (JSONKeyMapper *)keyMapper{\n      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{\n';
         for (let i = 0; i < mapper.length; i ++) {

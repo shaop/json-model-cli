@@ -1,6 +1,6 @@
 let path = require("path");
 let fs = require('fs');
-require('./letterTool');
+require('./../tool/letterTool');
 
 let res = '';
 
@@ -70,7 +70,9 @@ doHdData = (data,index,className,ignore) => {
             class_block += '   var '+CamelCase(key)+': Bool?\n';
         }
     }
+
     class_block += '\n   required init() {} \n';
+    // 写映射
     if (mapper.length > 0) {
         class_block += '\n   func mapping(mapper: HelpingMapper) {\n\n';
         for (let index in mapper) {

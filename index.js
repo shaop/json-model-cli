@@ -1,18 +1,23 @@
 #!/usr/bin/env node
 
 let program = require('commander');
-let hjm = require('./HandyJSONManager.js');
-let jmm = require('./JSONModelManager.js');
-let yym = require('./YYModelManager.js');
-let mjm = require('./MJExtensionManager.js');
+let hjm = require('./manager/HandyJSONManager.js');
+let jmm = require('./manager/JSONModelManager.js');
+let yym = require('./manager/YYModelManager.js');
+let mjm = require('./manager/MJExtensionManager.js');
 let path = require('path');
 let readline = require('readline');
 let colors = require('colors');
 
+function list(val) {
+    return val.split(',');
+}
+
 program
     .version('0.1.0')
     .option('-i, --input <path>', 'input file (include .h .swift)')
-    .option('-I, --input <path>', 'input file (include .h .swift)');
+    .option('-I, --input <path>', 'input file (include .h .swift)')
+    .option('-g, --ignore [value]', 'input an array that requires ignore, list by ","', list);
 
 program.on('--help', function(){
     console.log('  Examples:');
@@ -29,7 +34,7 @@ if (program.input) {
 
     if (path.extname(myPath) === '.swift') {
         // swift 转 HandJson
-        hjm.execute(myPath,['pic_infos']);
+        hjm.execute(myPath,program.ignore);
         console.log('\ndone'.blue);
 
     }else if (path.extname(myPath) === '.h') {
@@ -46,13 +51,13 @@ if (program.input) {
             mrl.question('\nadd a prefix? > ', function(prefixAnswer){
 
                 if (answer === '1' || answer === '') {
-                    jmm.execute(myPath, prefixAnswer, ['pic_infos']);
+                    jmm.execute(myPath, prefixAnswer, program.ignore);
                     console.log('\ndone'.blue);
                 }else if (answer === '2') {
-                    mjm.execute(myPath, prefixAnswer, ['pic_infos']);
+                    mjm.execute(myPath, prefixAnswer, program.ignore);
                     console.log('\ndone'.blue);
                 }else if (answer === '3') {
-                    yym.execute(myPath, prefixAnswer, ['pic_infos']);
+                    yym.execute(myPath, prefixAnswer, program.ignore);
                     console.log('\ndone'.blue);
                 }else {
                     console.log('\nerror: please input right number'.red);
