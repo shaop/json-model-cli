@@ -50,7 +50,6 @@ if (program.input) {
             mrl.question('\nadd a prefix? > ', function(prefixAnswer){
 
                 if (answer === '1' || answer === '') {
-                    console.log(program.except);
                     jmm.execute(myPath, prefixAnswer, program.except);
                     console.log('\ndone'.blue);
                 }else if (answer === '2') {

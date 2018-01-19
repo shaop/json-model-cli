@@ -1,0 +1,39 @@
+/**
+ * Created by chenxiaopeng on 2018/1/19.
+ */
+let hdm = require('../manager/HandyJSONManager');
+let expect = require('chai').expect;
+let fs = require('fs');
+let readline = require('readline');
+let LineByLine = require('./LineReader');
+
+function isContains(str, substr) {
+    return str.indexOf(substr) >= 0;
+}
+
+describe('HandyJSON 测试', function() {
+    it('json 1 基础测试', function() {
+        let data = JSON.parse(fs.readFileSync('./resources/json1.json'));
+        let jmData = hdm.getHdData(data,'Json1',[]);
+        jmData = jmData.replace(/\s+/g, '');
+
+        let liner = new LineByLine();
+
+        liner.open( './resources/json1.swift' );
+        let theline;
+        while( !liner._EOF )
+        {
+            theline = liner.next();
+            if (theline !== undefined) {
+                let s = theline.replace(/\s+/g, '');
+                if (s !== '') {
+                    if (!isContains(jmData,s)) {
+                        expect(jmData).to.contain(s);
+                        break;
+                    }
+                }
+            }
+        }
+        expect(true).to.be.ok;
+    });
+});
