@@ -19,8 +19,670 @@
          @"repostsCount" : @"reposts_count",
          @"attitudesCount" : @"attitudes_count",
          @"darwinTags" : @"darwin_tags",
+         @"picInfos" : @"pic_infos",
          @"inReplyToUserId" : @"in_reply_to_user_id",
          @"originalPic" : @"original_pic"
+      }];
+}
+
+@end
+
+@implementation PicInfos
+
+@end
+
+@implementation Eb8fce65jw1ew466s6sucj21ix16ux6p
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466lue7tj20l80fhjt2
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466mbh23j20qo0klmzv
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466xlyarj20zk0nuq6v
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466pxg8yj21t037knpe
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466loxu0j20hs0dc755
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466xea75j20zk0nojvm
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew466y3zltj20hs0gstar
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Eb8fce65jw1ew468zkxcgj237k1t01l0
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"picId" : @"pic_id",
+         @"photoTag" : @"photo_tag",
+         @"filterId" : @"filter_id",
+         @"objectId" : @"object_id"
+      }];
+}
+
+@end
+
+@implementation Middleplus
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Original
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Largest
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Large
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Bmiddle
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
+      }];
+}
+
+@end
+
+@implementation Thumbnail
+
++ (JSONKeyMapper *)keyMapper{
+      return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+         @"cutType" : @"cut_type"
       }];
 }
 

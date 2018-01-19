@@ -17,13 +17,12 @@ program
     .version('0.1.0')
     .option('-i, --input <path>', 'input file (include .h .swift)')
     .option('-I, --input <path>', 'input file (include .h .swift)')
-    .option('-e, --except', 'input an array that requires ignore, list by ","', list);
+    .option('-e, --except [value]', 'input an array that requires ignore, list by ","', list,[]);
 
 program.on('--help', function(){
     console.log('  Examples:');
     console.log('');
-    console.log('    $ jm --help');
-    console.log('    $ jm -h');
+    console.log('    $ jm -i ./test.h -e pic_infos');
     console.log('');
 });
 
@@ -34,7 +33,7 @@ if (program.input) {
 
     if (path.extname(myPath) === '.swift') {
         // swift 转 HandJson
-        hjm.execute(myPath,program.ignore);
+        hjm.execute(myPath,program.except);
         console.log('\ndone'.blue);
 
     }else if (path.extname(myPath) === '.h') {
@@ -51,13 +50,14 @@ if (program.input) {
             mrl.question('\nadd a prefix? > ', function(prefixAnswer){
 
                 if (answer === '1' || answer === '') {
-                    jmm.execute(myPath, prefixAnswer, program.ignore);
+                    console.log(program.except);
+                    jmm.execute(myPath, prefixAnswer, program.except);
                     console.log('\ndone'.blue);
                 }else if (answer === '2') {
-                    mjm.execute(myPath, prefixAnswer, program.ignore);
+                    mjm.execute(myPath, prefixAnswer, program.except);
                     console.log('\ndone'.blue);
                 }else if (answer === '3') {
-                    yym.execute(myPath, prefixAnswer, program.ignore);
+                    yym.execute(myPath, prefixAnswer, program.except);
                     console.log('\ndone'.blue);
                 }else {
                     console.log('\nerror: please input right number'.red);
