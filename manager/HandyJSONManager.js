@@ -12,6 +12,7 @@ Array.prototype.contains = function ( needle ) {
 
 let hjm = (function() {
     let res = '';
+    let classNames = [];
 
     let execute = function(file_path,ignore) {
         let data = JSON.parse(fs.readFileSync(file_path));
@@ -72,8 +73,14 @@ let hjm = (function() {
 
                 // 判断各类数据，做不同处理
                 if (x instanceof Object) {
-                    doHdData(x, index + 1, ClassCase(CamelCase(key)),ignore);
-                    class_block += '<'+ClassCase(CamelCase(key))+'>';
+                    // 排除出现一样的类名，如果一样，后面加个 X
+                    let className = ClassCase(CamelCase(key));
+                    while (classNames.contains(className)) {
+                        className = className + 'X';
+                    }
+                    classNames.push(className);
+                    doHdData(x, index + 1, className,ignore);
+                    class_block += '<' + className + '>';
                 } else if (typeof x === 'string') {
                     class_block += '<String>';
                 } else if (typeof x === 'number') {
@@ -95,8 +102,15 @@ let hjm = (function() {
                 class_block += '?\n';
 
             } else if (data[key] instanceof Object) {
-                doHdData(data[key], index + 1, ClassCase(CamelCase(key)),ignore);
-                class_block += '   var '+CamelCase(key)+': ' + ClassCase(CamelCase(key)) + '?\n';
+                // 排除出现一样的类名，如果一样，后面加个 X
+                let className = ClassCase(CamelCase(key));
+                while (classNames.contains(className)) {
+                    className = className + 'X';
+                }
+                classNames.push(className);
+
+                doHdData(data[key], index + 1, className ,ignore);
+                class_block += '   var '+CamelCase(key)+': ' + className + '?\n';
             } else if (typeof data[key] === 'string') {
                 class_block += '   var '+CamelCase(key)+': String?\n';
             } else if (typeof data[key] === 'number') {

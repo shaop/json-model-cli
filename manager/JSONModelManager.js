@@ -17,11 +17,14 @@ let jmm = (function() {
     let impRes = '';
     let prefix = '';
     let classs = [];
+    let classNames = [];
     let protocol = [];
 
     let execute = function(file_path,mprefix, ignore) {
         prefix = mprefix;
-        let context = getJMData(file_path, ignore);
+        let data = JSON.parse(fs.readFileSync(file_path));
+
+        let context = getJMData(data,path.basename(file_path,'.h'), ignore);
 
         // 写入.h
         fs.writeFile(file_path, context.hContext, function(err) {
@@ -41,13 +44,20 @@ let jmm = (function() {
 
     /**
      * 获取 jsonModel 数据
-     * @param file_path 文件路径
+     * @param data 文件路径
+     * @param className 类名
      * @param ignore 忽略字段
      * @returns {{hContext: string, mContext: string}}
      */
-    let getJMData = function(file_path, ignore) {
-        let data = JSON.parse(fs.readFileSync(file_path));
-        doJMData(data, 0, path.basename(file_path,'.h'), ignore);
+    let getJMData = function(data, className, ignore) {
+        res = '';
+        impRes = '';
+        prefix = '';
+        classs = [];
+        classNames = [];
+        protocol = [];
+
+        doJMData(data, 0, className, ignore);
 
         let header = '#import <JSONModel/JSONModel.h>\n\n';
 
@@ -80,7 +90,7 @@ let jmm = (function() {
         res = header + res;
 
         // 写import
-        impRes = '#import "'+path.basename(file_path)+'"\n\n' + impRes;
+        impRes = '#import "'+className+'.h"\n\n' + impRes;
 
         return {
             hContext: res,
@@ -113,17 +123,51 @@ let jmm = (function() {
             }
 
             if (data[key] instanceof Array) {
-                if (data[key][0] instanceof Object) {
-                    doJMData(data[key][0], index + 1, ClassCase(CamelCase(key),prefix), ignore);
-                    protocol.push(ClassCase(CamelCase(key)));
-                    class_block += '@property (nonatomic, strong) NSArray<'+ClassCase(CamelCase(key),prefix)+ '> *' + CamelCase(key) +';\n';
-                }else {
-                    class_block += '@property (nonatomic, strong) NSArray *' + CamelCase(key) +';\n';
+                class_block += '@property (nonatomic, strong) NSArray';
+                let x = data[key][0];
+                let count = 0;
+                // 为 Array 时重复判断内有多少个array
+                while (x instanceof Array) {
+                    if (!protocol.contains('NSArray')) {
+                        protocol.push('NSArray')
+                    }
+                    class_block += '<NSArray';
+                    count ++;
+                    x = x[0];
                 }
+
+                // 判断各类数据，做不同处理
+                if (data[key][0] instanceof Object) {
+                    // 判断各类数据，做不同处理
+                    if (x instanceof Object) {
+                        // 排除出现一样的类名，如果一样，后面加个 X
+                        let className = ClassCase(CamelCase(key),prefix);
+                        while (classNames.contains(className)) {
+                            className = className + 'X';
+                        }
+                        classNames.push(className);
+                        doJMData(x, index + 1, className,ignore);
+                        class_block += '<' + className + '>';
+                        protocol.push(className);
+                    }
+
+                    for (let i =0; i<count; i++ ){
+                        class_block += '>';
+                    }
+                }
+
+                class_block += ' *' + CamelCase(key) +';\n';
             } else if (data[key] instanceof Object) {
-                doJMData(data[key], index + 1, ClassCase(CamelCase(key),prefix), ignore);
-                classs.push(ClassCase(CamelCase(key),prefix));
-                class_block += '@property (nonatomic, strong) ' + ClassCase(CamelCase(key),prefix) + ' *' + CamelCase(key) +';\n';
+                // 排除出现一样的类名，如果一样，后面加个 X
+                let className = ClassCase(CamelCase(key));
+                while (classNames.contains(className)) {
+                    className = className + 'X';
+                }
+                classNames.push(className);
+
+                doJMData(data[key], index + 1, className, ignore);
+                classs.push(className);
+                class_block += '@property (nonatomic, strong) ' + className + ' *' + CamelCase(key) +';\n';
             } else if (typeof data[key] === 'string') {
                 class_block += '@property (nonatomic, copy) NSString' + ' *' + CamelCase(key) +';\n';
             } else if (typeof data[key] === 'number') {
@@ -154,7 +198,8 @@ let jmm = (function() {
     };
 
     return {
-        execute
+        execute,
+        getJMData
     }
 }) ();
 
