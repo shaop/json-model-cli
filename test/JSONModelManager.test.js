@@ -1,6 +1,7 @@
 let jmm = require('../manager/JSONModelManager');
 let expect = require('chai').expect;
 let fs = require('fs');
+let path = require('path');
 let LineByLine = require('./LineReader');
 
 function isContains(str, substr) {
@@ -9,7 +10,7 @@ function isContains(str, substr) {
 
 describe('JSONModel 测试', function() {
     it('json 1 基础测试', function () {
-        let data = JSON.parse(fs.readFileSync('./resources/json1.json'));
+        let data = JSON.parse(fs.readFileSync(path.resolve('./test/resources/json1.json')));
         let jmData = jmm.getJMData(data, 'jsonModel1', []);
         let hContext = jmData.hContext;
         let mContext = jmData.mContext;
@@ -18,7 +19,7 @@ describe('JSONModel 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open('./resources/jsonModel1.h');
+        liner.open(path.resolve('./test/resources/jsonModel1.h'));
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -33,7 +34,7 @@ describe('JSONModel 测试', function() {
             }
         }
 
-        liner.open('./resources/jsonModel1.m');
+        liner.open(path.resolve('./test/resources/jsonModel1.m'));
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();
@@ -52,7 +53,7 @@ describe('JSONModel 测试', function() {
     });
 
     it('json 2 嵌套测试', function () {
-        let data = JSON.parse(fs.readFileSync('./resources/json2.json'));
+        let data = JSON.parse(fs.readFileSync(path.resolve('./test/resources/json2.json')));
         let jmData = jmm.getJMData(data, 'jsonModel2', []);
         let hContext = jmData.hContext;
         let mContext = jmData.mContext;
@@ -61,7 +62,7 @@ describe('JSONModel 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open('./resources/jsonModel2.h');
+        liner.open('./test/resources/jsonModel2.h');
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -76,7 +77,7 @@ describe('JSONModel 测试', function() {
             }
         }
 
-        liner.open('./resources/jsonModel2.m');
+        liner.open(path.resolve('./test/resources/jsonModel2.m'));
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();
