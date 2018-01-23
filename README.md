@@ -1,5 +1,5 @@
 # json-model-cli 
-
+[![Build Status](https://www.travis-ci.org/shaop/json-model-cli.svg?branch=master)](https://www.travis-ci.org/shaop/json-model-cli)
 > generate models in a simpler way
 
 ![preview](http://7xkl1p.com1.z0.glb.clouddn.com/model-json-cli.gif)
