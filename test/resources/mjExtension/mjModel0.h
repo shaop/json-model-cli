@@ -1,4 +1,4 @@
-#import "MJExtension.h"
+#import "aMJExtension.h"
 
 @interface mjModel0 : NSObject
 

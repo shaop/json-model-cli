@@ -21,7 +21,7 @@ describe('YYModel 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open('./test/resources/yyModel/yyModel0.h');
+        liner.open('./test/resources/YYModel/yyModel0.h');
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -36,7 +36,7 @@ describe('YYModel 测试', function() {
             }
         }
 
-        liner.open('./test/resources/yyModel/yyModel0.m');
+        liner.open('./test/resources/YYModel/yyModel0.m');
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();
@@ -63,7 +63,7 @@ describe('YYModel 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open('./test/resources/yyModel/yyModel1.h');
+        liner.open('./test/resources/YYModel/yyModel1.h');
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -78,7 +78,7 @@ describe('YYModel 测试', function() {
             }
         }
 
-        liner.open('./test/resources/yyModel/yyModel1.m');
+        liner.open('./test/resources/YYModel/yyModel1.m');
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();
@@ -106,7 +106,7 @@ describe('YYModel 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open('./test/resources/yyModel/yyModel2.h');
+        liner.open('./test/resources/YYModel/yyModel2.h');
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -121,7 +121,7 @@ describe('YYModel 测试', function() {
             }
         }
 
-        liner.open('./test/resources/yyModel/yyModel2.m');
+        liner.open('./test/resources/YYModel/yyModel2.m');
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();
