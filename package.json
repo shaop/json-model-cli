@@ -1,6 +1,6 @@
 {
   "name": "json-model-cli",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "make you json to model easier",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://115.238.142.158:1000/shaop/json-maker.git"
+    "url": "https://github.com/shaop/json-model-cli.git"
   },
   "author": "shaop",
   "license": "MIT",
