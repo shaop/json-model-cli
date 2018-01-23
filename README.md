@@ -2,7 +2,7 @@
 [![Build Status](https://www.travis-ci.org/shaop/json-model-cli.svg?branch=master)](https://www.travis-ci.org/shaop/json-model-cli)
 > generate models in a simpler way
 
-<img src="http://7xkl1p.com1.z0.glb.clouddn.com/model-json-cli.gif" width="376"/>
+<img src="http://7xkl1p.com1.z0.glb.clouddn.com/json-model-cli%202.gif" width="376"/>
 
 ## Now 
 json-model-cli supports for these model library
