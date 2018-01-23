@@ -137,24 +137,22 @@ let jmm = (function() {
                 }
 
                 // 判断各类数据，做不同处理
-                if (data[key][0] instanceof Object) {
-                    // 判断各类数据，做不同处理
-                    if (x instanceof Object) {
-                        // 排除出现一样的类名，如果一样，后面加个 X
-                        let className = ClassCase(CamelCase(key),prefix);
-                        while (classNames.contains(className)) {
-                            className = className + 'X';
-                        }
-                        classNames.push(className);
-                        doJMData(x, index + 1, className,ignore);
-                        class_block += '<' + className + '>';
-                        protocol.push(className);
+                if (x instanceof Object) {
+                    // 排除出现一样的类名，如果一样，后面加个 X
+                    let className = ClassCase(CamelCase(key),prefix);
+                    while (classNames.contains(className)) {
+                        className = className + 'X';
                     }
-
-                    for (let i =0; i<count; i++ ){
-                        class_block += '>';
-                    }
+                    classNames.push(className);
+                    doJMData(x, index + 1, className,ignore);
+                    class_block += '<' + className + '>';
+                    protocol.push(className);
                 }
+
+                for (let i =0; i<count; i++ ){
+                    class_block += '>';
+                }
+
 
                 class_block += ' *' + CamelCase(key) +';\n';
             } else if (data[key] instanceof Object) {

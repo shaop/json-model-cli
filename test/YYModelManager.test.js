@@ -1,4 +1,7 @@
-let jmm = require('../manager/JSONModelManager');
+/**
+ * Created by chenxiaopeng on 2018/1/22.
+ */
+let yym = require('../manager/YYModelManager');
 let expect = require('chai').expect;
 let fs = require('fs');
 let LineByLine = require('./LineReader');
@@ -10,7 +13,7 @@ function isContains(str, substr) {
 describe('JSONModel 测试', function() {
     it('json 1 基础测试', function () {
         let data = JSON.parse(fs.readFileSync('./resources/json1.json'));
-        let jmData = jmm.getJMData(data, 'jsonModel1', []);
+        let jmData = yym.getYYData(data, 'yyModel1', []);
         let hContext = jmData.hContext;
         let mContext = jmData.mContext;
         hContext = hContext.replace(/\s+/g, '');
@@ -18,7 +21,7 @@ describe('JSONModel 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open('./resources/jsonModel/jsonModel1.h');
+        liner.open('./resources/yyModel/yyModel1.h');
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -33,7 +36,7 @@ describe('JSONModel 测试', function() {
             }
         }
 
-        liner.open('./resources/jsonModel/jsonModel1.m');
+        liner.open('./resources/yyModel/yyModel1.m');
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();
@@ -53,15 +56,15 @@ describe('JSONModel 测试', function() {
 
     it('json 2 嵌套测试', function () {
         let data = JSON.parse(fs.readFileSync('./resources/json2.json'));
-        let jmData = jmm.getJMData(data, 'jsonModel2', []);
-        let hContext = jmData.hContext;
-        let mContext = jmData.mContext;
+        let mjData = yym.getYYData(data, 'yyModel2', []);
+        let hContext = mjData.hContext;
+        let mContext = mjData.mContext;
         hContext = hContext.replace(/\s+/g, '');
         mContext = mContext.replace(/\s+/g, '');
 
         let liner = new LineByLine();
 
-        liner.open('./resources/jsonModel/jsonModel2.h');
+        liner.open('./resources/yyModel/yyModel2.h');
         let theline1;
         while (!liner._EOF) {
             theline1 = liner.next();
@@ -76,7 +79,7 @@ describe('JSONModel 测试', function() {
             }
         }
 
-        liner.open('./resources/jsonModel/jsonModel2.m');
+        liner.open('./resources/yyModel/yyModel2.m');
         let theline2;
         while (!liner._EOF) {
             theline2 = liner.next();

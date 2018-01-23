@@ -17,11 +17,15 @@ let yym = (function() {
     let res = '';
     let impRes = '';
     let prefix = '';
+    let classNames = [];
 
     let execute = function(file_path, mprefix, ignore) {
-        prefix = mprefix;
+        classNames = [];
 
-        let context = getYYData(file_path, ignore);
+        prefix = mprefix;
+        let data = JSON.parse(fs.readFileSync(file_path));
+
+        let context = getYYData(data, path.basename(file_path,'.h'), ignore);
 
         // 写入.h
         fs.writeFile(file_path, context.hContext, function (err) {
@@ -40,19 +44,23 @@ let yym = (function() {
     };
     /**
      * 获取数据
-     * @param file_path 文件路径
+     * @param data 文件路径
+     * @param className 类名
      * @param ignore 忽略文件
      * @returns {{hContext: string, mContext: string}}
      */
-    let getYYData = function(file_path, ignore) {
-        let data = JSON.parse(fs.readFileSync(file_path));
-        doYYData(data, 0, path.basename(file_path, '.h'), ignore);
+    let getYYData = function(data, className, ignore) {
+        res = '';
+        impRes = '';
+        prefix = '';
 
-        let header = '#import "MJExtension.h"\n\n';
+        doYYData(data, 0, className, ignore);
+
+        let header = '#import <YYModel/YYModel.h>\n\n';
         res = header + res;
 
         // 写import
-        impRes = '#import "' + path.basename(file_path) + '"\n\n' + impRes;
+        impRes = '#import "' + className + '.h"\n\n' + impRes;
 
         return {
             hContext: res,
@@ -86,14 +94,43 @@ let yym = (function() {
 
 
             if (data[key] instanceof Array) {
-                if (data[key][0] instanceof Object) {
-                    doYYData(data[key][0], index + 1, ClassCase(CamelCase(key), prefix), ignore);
-                    arrayDic.push({key: ClassCase(CamelCase(key)), value: CamelCase(key)});
+                class_block += '@property (nonatomic, strong) NSArray';
+                let x = data[key][0];
+                let count = 0;
+                // 为 Array 时重复判断内有多少个array
+                while (x instanceof Array) {
+                    class_block += '<NSArray';
+                    count ++;
+                    x = x[0];
                 }
-                class_block += '@property (nonatomic, strong) NSArray *' + CamelCase(key) + ';\n';
+
+                // 判断各类数据，做不同处理
+                if (x instanceof Object) {
+                    // 排除出现一样的类名，如果一样，后面加个 X
+                    let mclassName = ClassCase(CamelCase(key),prefix);
+                    while (classNames.contains(mclassName)) {
+                        mclassName = mclassName + 'X';
+                    }
+                    classNames.push(mclassName);
+                    arrayDic.push({key: mclassName, value: CamelCase(key)});
+                    doYYData(x, index + 1, mclassName,ignore);
+                    class_block += '<' + mclassName + ' *>';
+                }
+
+                for (let i =0; i<count; i++ ){
+                    class_block += ' *>';
+                }
+
+                class_block += ' *' + CamelCase(key) +';\n';
             } else if (data[key] instanceof Object) {
+                // 排除出现一样的类名，如果一样，后面加个 X
+                let mclassName = ClassCase(CamelCase(key));
+                while (classNames.contains(mclassName)) {
+                    mclassName = mclassName + 'X';
+                }
+                classNames.push(mclassName);
                 doYYData(data[key], index + 1, ClassCase(CamelCase(key), prefix), ignore);
-                class_block += '@property (nonatomic, strong) ' + ClassCase(CamelCase(key), prefix) + ' *' + CamelCase(key) + ';\n';
+                class_block += '@property (nonatomic, strong) ' + mclassName + ' *' + CamelCase(key) +';\n';
             } else if (typeof data[key] === 'string') {
                 class_block += '@property (nonatomic, copy) NSString' + ' *' + CamelCase(key) + ';\n';
             } else if (typeof data[key] === 'number') {
@@ -141,7 +178,8 @@ let yym = (function() {
     };
 
     return {
-        execute
+        execute,
+        getYYData
     }
 }) ();
 

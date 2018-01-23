@@ -1,580 +1,163 @@
-{
-    "favorited" : true,
-    "attitudes_status" : 0,
-    "created_at" : "Wed Sep 16 12:20:09 +0800 2015",
-    "id" : 3887674148022737,
-    "truncated" : false,
-    "in_reply_to_screen_name" : "",
-    "mblogid" : "CAMNUxF4Z",
-    "text" : "感谢你们的一路陪伴，我很幸福，你们也要和我一样幸福❤️——致冰邦",
-    "idstr" : "3887674148022737",
-    "source_type" : 1,
-    "geo" : "",
-    "user" : {
-        "cover_image_phone" : "http://ww4.sinaimg.cn/crop.0.0.640.640.640/6ce2240djw1e8iktk4ohij20hs0hsmz6.jpg",
-        "id" : 3952070245,
-        "bi_followers_count" : 153,
-        "urank" : 23,
-        "profile_image_url" : "http://tp2.sinaimg.cn/3952070245/50/5737272572/0",
-        "icons" : [
-                   {
-                   "url" : "http://u1.sinaimg.cn/upload/2014/11/04/common_icon_membership_level5.png"
-                   }
-                   ],
-        "class" : 1,
-        "verified_contact_email" : "",
-        "province" : "11",
-        "verified" : true,
-        "url" : "",
-        "statuses_count" : 805,
-        "geo_enabled" : true,
-        "follow_me" : false,
-        "description" : "",
-        "type" : 1,
-        "followers_count" : 39082009,
-        "verified_contact_mobile" : "",
-        "location" : "北京",
-        "mbrank" : 5,
-        "avatar_large" : "http://tp2.sinaimg.cn/3952070245/180/5737272572/0",
-        "star" : 0,
-        "verified_trade" : "1017",
-        "profile_url" : "fbb0916",
-        "weihao" : "",
-        "online_status" : 0,
-        "badge_top" : "",
-        "verified_contact_name" : "",
-        "screen_name" : "范冰冰",
-        "verified_source_url" : "",
-        "pagefriends_count" : 0,
-        "name" : "范冰冰",
-        "verified_reason" : "演员、“爱里的心”公益项目发起人",
-        "friends_count" : 165,
-        "mbtype" : 12,
-        "block_app" : 1,
-        "has_ability_tag" : 1,
-        "avatar_hd" : "http://ww3.sinaimg.cn/crop.0.0.1080.1080.1024/eb8fce65jw8ew37o3lzy0j20u00u0af9.jpg",
-        "credit_score" : 80,
-        "remark" : "",
-        "created_at" : "Wed Dec 25 12:22:19 +0800 2013",
-        "block_word" : 0,
-        "ulevel" : 0,
-        "allow_all_act_msg" : false,
-        "verified_state" : 0,
-        "domain" : "fbb0916",
-        "verified_reason_modified" : "",
-        "level" : 2,
-        "allow_all_comment" : true,
-        "verified_level" : 1,
-        "verified_reason_url" : "",
-        "gender" : "f",
-        "favourites_count" : 1,
-        "idstr" : "3952070245",
-        "verified_type" : 0,
-        "city" : "1000",
-        "verified_source" : "",
-        "badge" : {
-            "gongyi" : 0,
-            "gongyi_level" : 0,
-            "enterprise" : 0,
-            "zongyiji" : 1,
-            "suishoupai_2014" : 0,
-            "travel2013" : 0,
-            "anniversary" : 0,
-            "taobao" : 0,
-            "hongbao_2014" : 1,
-            "dzwbqlv_2015" : 0,
-            "uc_domain" : 0,
-            "bind_taobao" : 0,
-            "dailv" : 0,
-            "pzsd_2015" : 0
-        },
-        "user_ability" : 0,
-        "extend" : {
-            "privacy" : {
-                "mobile" : 0
-            },
-            "mbprivilege" : "0000000000000000000000000000000000000000000000000000000000c10208"
-        },
-        "lang" : "zh-cn",
-        "ptype" : 1,
-        "following" : false
-    },
-    "comments_count" : 34006,
-    "thumbnail_pic" : "http://ww4.sinaimg.cn/thumbnail/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-    "source" : "<a href=\"http://app.weibo.com/t/feed/356EzI\" rel=\"nofollow\">new moto x</a>",
-    "recom_state" : -1,
-    "source_allowclick" : 0,
-    "biz_feature" : 4294967300,
-    "mblogtypename" : "",
-    "annotations" : [
-                     {
-                     "client_mblogid" : "eddd9b1b-afe6-4703-9288-3f18e0d85573"
-                     },
-                     {
-                     "mapi_request" : true
-                     }
-                     ],
-    "filterID" : "",
-    "bmiddle_pic" : "http://ww4.sinaimg.cn/bmiddle/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-    "scheme" : "sinaweibo://detail/?mblogid=CAMNUxF4Z",
-    "visible" : {
-        "type" : 0,
-        "list_id" : 0
-    },
-    "in_reply_to_status_id" : "",
-    "mid" : "3887674148022737",
-    "pic_ids" : [
-                 "eb8fce65jw1ew466loxu0j20hs0dc755",
-                 "eb8fce65jw1ew466lue7tj20l80fhjt2",
-                 "eb8fce65jw1ew466mbh23j20qo0klmzv",
-                 "eb8fce65jw1ew466pxg8yj21t037knpe",
-                 "eb8fce65jw1ew466s6sucj21ix16ux6p",
-                 "eb8fce65jw1ew468zkxcgj237k1t01l0",
-                 "eb8fce65jw1ew466xea75j20zk0nojvm",
-                 "eb8fce65jw1ew466xlyarj20zk0nuq6v",
-                 "eb8fce65jw1ew466y3zltj20hs0gstar"
-                 ],
-    "reposts_count" : 12662,
-    "mlevel" : 0,
-    "attitudes_count" : 407220,
-    "darwin_tags" : [
+#import <JSONModel/JSONModel.h>
 
-    ],
-    "userType" : 0,
-    "pic_infos" : {
-        "eb8fce65jw1ew468zkxcgj237k1t01l0" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww2.sinaimg.cn/or180/eb8fce65jw1ew468zkxcgj237k1t01l0.jpg",
-                "width" : 266,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww2.sinaimg.cn/or360/eb8fce65jw1ew468zkxcgj237k1t01l0.jpg",
-                "width" : 480,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww2.sinaimg.cn/wap720/eb8fce65jw1ew468zkxcgj237k1t01l0.jpg",
-                "width" : 720,
-                "height" : 405
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww2.sinaimg.cn/large/eb8fce65jw1ew468zkxcgj237k1t01l0.jpg",
-                "width" : 2048,
-                "height" : 1152
-            },
-            "pic_id" : "eb8fce65jw1ew468zkxcgj237k1t01l0",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww2.sinaimg.cn/woriginal/eb8fce65jw1ew468zkxcgj237k1t01l0.jpg",
-                "width" : 2048,
-                "height" : 1152
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:c9c58ca914425bc1370ca0d9f56cae83",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww2.sinaimg.cn/or480/eb8fce65jw1ew468zkxcgj237k1t01l0.jpg",
-                "width" : 640,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466y3zltj20hs0gstar" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or180/eb8fce65jw1ew466y3zltj20hs0gstar.jpg",
-                "width" : 158,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or360/eb8fce65jw1ew466y3zltj20hs0gstar.jpg",
-                "width" : 286,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/wap720/eb8fce65jw1ew466y3zltj20hs0gstar.jpg",
-                "width" : "640",
-                "height" : "604"
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/large/eb8fce65jw1ew466y3zltj20hs0gstar.jpg",
-                "width" : "640",
-                "height" : "604"
-            },
-            "pic_id" : "eb8fce65jw1ew466y3zltj20hs0gstar",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/woriginal/eb8fce65jw1ew466y3zltj20hs0gstar.jpg",
-                "width" : "640",
-                "height" : "604"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:a8053e0cf3f13e3c0f0d8ff84bf4500b",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or480/eb8fce65jw1ew466y3zltj20hs0gstar.jpg",
-                "width" : 381,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466xea75j20zk0nojvm" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww2.sinaimg.cn/or180/eb8fce65jw1ew466xea75j20zk0nojvm.jpg",
-                "width" : 225,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww2.sinaimg.cn/or360/eb8fce65jw1ew466xea75j20zk0nojvm.jpg",
-                "width" : 405,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww2.sinaimg.cn/wap720/eb8fce65jw1ew466xea75j20zk0nojvm.jpg",
-                "width" : 720,
-                "height" : 479
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww2.sinaimg.cn/large/eb8fce65jw1ew466xea75j20zk0nojvm.jpg",
-                "width" : "1280",
-                "height" : "852"
-            },
-            "pic_id" : "eb8fce65jw1ew466xea75j20zk0nojvm",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww2.sinaimg.cn/woriginal/eb8fce65jw1ew466xea75j20zk0nojvm.jpg",
-                "width" : "1280",
-                "height" : "852"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:47717e498f6560645f34498f79102c1a",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww2.sinaimg.cn/or480/eb8fce65jw1ew466xea75j20zk0nojvm.jpg",
-                "width" : 540,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466loxu0j20hs0dc755" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww4.sinaimg.cn/or180/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-                "width" : 200,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww4.sinaimg.cn/or360/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-                "width" : 360,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww4.sinaimg.cn/wap720/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-                "width" : "640",
-                "height" : "480"
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww4.sinaimg.cn/large/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-                "width" : "640",
-                "height" : "480"
-            },
-            "pic_id" : "eb8fce65jw1ew466loxu0j20hs0dc755",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww4.sinaimg.cn/woriginal/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-                "width" : "640",
-                "height" : "480"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:28bb2f540c5579028a266399b72722cf",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww4.sinaimg.cn/or480/eb8fce65jw1ew466loxu0j20hs0dc755.jpg",
-                "width" : 480,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466pxg8yj21t037knpe" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or180/eb8fce65jw1ew466pxg8yj21t037knpe.jpg",
-                "width" : 180,
-                "height" : 319
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or360/eb8fce65jw1ew466pxg8yj21t037knpe.jpg",
-                "width" : 360,
-                "height" : 639
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/wap720/eb8fce65jw1ew466pxg8yj21t037knpe.jpg",
-                "width" : 720,
-                "height" : 1280
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/large/eb8fce65jw1ew466pxg8yj21t037knpe.jpg",
-                "width" : 2048,
-                "height" : 3640
-            },
-            "pic_id" : "eb8fce65jw1ew466pxg8yj21t037knpe",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/woriginal/eb8fce65jw1ew466pxg8yj21t037knpe.jpg",
-                "width" : 2048,
-                "height" : 3640
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:49869179c7f7867e3f3b043954d7732c",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or480/eb8fce65jw1ew466pxg8yj21t037knpe.jpg",
-                "width" : 480,
-                "height" : 853
-            }
-        },
-        "eb8fce65jw1ew466xlyarj20zk0nuq6v" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or180/eb8fce65jw1ew466xlyarj20zk0nuq6v.jpg",
-                "width" : 223,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or360/eb8fce65jw1ew466xlyarj20zk0nuq6v.jpg",
-                "width" : 402,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/wap720/eb8fce65jw1ew466xlyarj20zk0nuq6v.jpg",
-                "width" : 720,
-                "height" : 482
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/large/eb8fce65jw1ew466xlyarj20zk0nuq6v.jpg",
-                "width" : "1280",
-                "height" : "858"
-            },
-            "pic_id" : "eb8fce65jw1ew466xlyarj20zk0nuq6v",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/woriginal/eb8fce65jw1ew466xlyarj20zk0nuq6v.jpg",
-                "width" : "1280",
-                "height" : "858"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:9ead7c77c53a45e004708c658e1b5494",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or480/eb8fce65jw1ew466xlyarj20zk0nuq6v.jpg",
-                "width" : 537,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466mbh23j20qo0klmzv" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww3.sinaimg.cn/or180/eb8fce65jw1ew466mbh23j20qo0klmzv.jpg",
-                "width" : 194,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww3.sinaimg.cn/or360/eb8fce65jw1ew466mbh23j20qo0klmzv.jpg",
-                "width" : 349,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww3.sinaimg.cn/wap720/eb8fce65jw1ew466mbh23j20qo0klmzv.jpg",
-                "width" : 720,
-                "height" : 555
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww3.sinaimg.cn/large/eb8fce65jw1ew466mbh23j20qo0klmzv.jpg",
-                "width" : "960",
-                "height" : "741"
-            },
-            "pic_id" : "eb8fce65jw1ew466mbh23j20qo0klmzv",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww3.sinaimg.cn/woriginal/eb8fce65jw1ew466mbh23j20qo0klmzv.jpg",
-                "width" : "960",
-                "height" : "741"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:7b3b5a95fcaf951dd3b076aa3dcfeecb",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww3.sinaimg.cn/or480/eb8fce65jw1ew466mbh23j20qo0klmzv.jpg",
-                "width" : 466,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466lue7tj20l80fhjt2" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww3.sinaimg.cn/or180/eb8fce65jw1ew466lue7tj20l80fhjt2.jpg",
-                "width" : 205,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww3.sinaimg.cn/or360/eb8fce65jw1ew466lue7tj20l80fhjt2.jpg",
-                "width" : 370,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww3.sinaimg.cn/wap720/eb8fce65jw1ew466lue7tj20l80fhjt2.jpg",
-                "width" : 720,
-                "height" : 524
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww3.sinaimg.cn/large/eb8fce65jw1ew466lue7tj20l80fhjt2.jpg",
-                "width" : "764",
-                "height" : "557"
-            },
-            "pic_id" : "eb8fce65jw1ew466lue7tj20l80fhjt2",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww3.sinaimg.cn/woriginal/eb8fce65jw1ew466lue7tj20l80fhjt2.jpg",
-                "width" : "764",
-                "height" : "557"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:0f52517658f21eb17a582ab74f3e4533",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww3.sinaimg.cn/or480/eb8fce65jw1ew466lue7tj20l80fhjt2.jpg",
-                "width" : 493,
-                "height" : 360
-            }
-        },
-        "eb8fce65jw1ew466s6sucj21ix16ux6p" : {
-            "thumbnail" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or180/eb8fce65jw1ew466s6sucj21ix16ux6p.jpg",
-                "width" : 192,
-                "height" : 150
-            },
-            "bmiddle" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or360/eb8fce65jw1ew466s6sucj21ix16ux6p.jpg",
-                "width" : 346,
-                "height" : 270
-            },
-            "large" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/wap720/eb8fce65jw1ew466s6sucj21ix16ux6p.jpg",
-                "width" : 720,
-                "height" : 561
-            },
-            "largest" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/large/eb8fce65jw1ew466s6sucj21ix16ux6p.jpg",
-                "width" : "1977",
-                "height" : "1542"
-            },
-            "pic_id" : "eb8fce65jw1ew466s6sucj21ix16ux6p",
-            "photo_tag" : 0,
-            "original" : {
-                "cut_type" : 1,
-                "type" : "JPEG",
-                "url" : "http://ww1.sinaimg.cn/woriginal/eb8fce65jw1ew466s6sucj21ix16ux6p.jpg",
-                "width" : "1977",
-                "height" : "1542"
-            },
-            "filter_id" : "1",
-            "object_id" : "1042018:9e8c3eaf0c86500db9d3013e580601f8",
-            "middleplus" : {
-                "cut_type" : 1,
-                "type" : "WEBP",
-                "url" : "http://ww1.sinaimg.cn/or480/eb8fce65jw1ew466s6sucj21ix16ux6p.jpg",
-                "width" : 461,
-                "height" : 360
-            }
-        }
-    },
-    "in_reply_to_user_id" : "",
-    "original_pic" : "http://ww4.sinaimg.cn/large/eb8fce65jw1ew466loxu0j20hs0dc755.jpg"
-}
+@class Badge, Privacy, Extend, User, Visible;
+@protocol Icons, Annotations;
+
+@interface test : JSONModel 
+
+@property (nonatomic, assign) BOOL favorited;
+@property (nonatomic, strong) NSNumber *attitudesStatus;
+@property (nonatomic, copy) NSString *createdAt;
+@property (nonatomic, strong) NSNumber *id;
+@property (nonatomic, assign) BOOL truncated;
+@property (nonatomic, copy) NSString *inReplyToScreenName;
+@property (nonatomic, copy) NSString *mblogid;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *idstr;
+@property (nonatomic, strong) NSNumber *sourceType;
+@property (nonatomic, copy) NSString *geo;
+@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSNumber *commentsCount;
+@property (nonatomic, copy) NSString *thumbnailPic;
+@property (nonatomic, copy) NSString *source;
+@property (nonatomic, strong) NSNumber *recomState;
+@property (nonatomic, strong) NSNumber *sourceAllowclick;
+@property (nonatomic, strong) NSNumber *bizFeature;
+@property (nonatomic, copy) NSString *mblogtypename;
+@property (nonatomic, strong) NSArray<Annotations> *annotations;
+@property (nonatomic, copy) NSString *filterID;
+@property (nonatomic, copy) NSString *bmiddlePic;
+@property (nonatomic, copy) NSString *scheme;
+@property (nonatomic, strong) Visible *visible;
+@property (nonatomic, copy) NSString *inReplyToStatusId;
+@property (nonatomic, copy) NSString *mid;
+@property (nonatomic, strong) NSArray *picIds;
+@property (nonatomic, strong) NSNumber *repostsCount;
+@property (nonatomic, strong) NSNumber *mlevel;
+@property (nonatomic, strong) NSNumber *attitudesCount;
+@property (nonatomic, strong) NSArray *darwinTags;
+@property (nonatomic, strong) NSNumber *userType;
+@property (nonatomic, copy) NSString *inReplyToUserId;
+@property (nonatomic, copy) NSString *originalPic;
+
+@end
+
+@interface Visible : JSONModel 
+
+@property (nonatomic, strong) NSNumber *type;
+@property (nonatomic, strong) NSNumber *listId;
+
+@end
+
+@interface Annotations : JSONModel 
+
+@property (nonatomic, copy) NSString *clientMblogid;
+
+@end
+
+@interface User : JSONModel 
+
+@property (nonatomic, copy) NSString *coverImagePhone;
+@property (nonatomic, strong) NSNumber *id;
+@property (nonatomic, strong) NSNumber *biFollowersCount;
+@property (nonatomic, strong) NSNumber *urank;
+@property (nonatomic, copy) NSString *profileImageUrl;
+@property (nonatomic, strong) NSArray<Icons> *icons;
+@property (nonatomic, strong) NSNumber *class;
+@property (nonatomic, copy) NSString *verifiedContactEmail;
+@property (nonatomic, copy) NSString *province;
+@property (nonatomic, assign) BOOL verified;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, strong) NSNumber *statusesCount;
+@property (nonatomic, assign) BOOL geoEnabled;
+@property (nonatomic, assign) BOOL followMe;
+@property (nonatomic, copy) NSString *description;
+@property (nonatomic, strong) NSNumber *type;
+@property (nonatomic, strong) NSNumber *followersCount;
+@property (nonatomic, copy) NSString *verifiedContactMobile;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, strong) NSNumber *mbrank;
+@property (nonatomic, copy) NSString *avatarLarge;
+@property (nonatomic, strong) NSNumber *star;
+@property (nonatomic, copy) NSString *verifiedTrade;
+@property (nonatomic, copy) NSString *profileUrl;
+@property (nonatomic, copy) NSString *weihao;
+@property (nonatomic, strong) NSNumber *onlineStatus;
+@property (nonatomic, copy) NSString *badgeTop;
+@property (nonatomic, copy) NSString *verifiedContactName;
+@property (nonatomic, copy) NSString *screenName;
+@property (nonatomic, copy) NSString *verifiedSourceUrl;
+@property (nonatomic, strong) NSNumber *pagefriendsCount;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *verifiedReason;
+@property (nonatomic, strong) NSNumber *friendsCount;
+@property (nonatomic, strong) NSNumber *mbtype;
+@property (nonatomic, strong) NSNumber *blockApp;
+@property (nonatomic, strong) NSNumber *hasAbilityTag;
+@property (nonatomic, copy) NSString *avatarHd;
+@property (nonatomic, strong) NSNumber *creditScore;
+@property (nonatomic, copy) NSString *remark;
+@property (nonatomic, copy) NSString *createdAt;
+@property (nonatomic, strong) NSNumber *blockWord;
+@property (nonatomic, strong) NSNumber *ulevel;
+@property (nonatomic, assign) BOOL allowAllActMsg;
+@property (nonatomic, strong) NSNumber *verifiedState;
+@property (nonatomic, copy) NSString *domain;
+@property (nonatomic, copy) NSString *verifiedReasonModified;
+@property (nonatomic, strong) NSNumber *level;
+@property (nonatomic, assign) BOOL allowAllComment;
+@property (nonatomic, strong) NSNumber *verifiedLevel;
+@property (nonatomic, copy) NSString *verifiedReasonUrl;
+@property (nonatomic, copy) NSString *gender;
+@property (nonatomic, strong) NSNumber *favouritesCount;
+@property (nonatomic, copy) NSString *idstr;
+@property (nonatomic, strong) NSNumber *verifiedType;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *verifiedSource;
+@property (nonatomic, strong) Badge *badge;
+@property (nonatomic, strong) NSNumber *userAbility;
+@property (nonatomic, strong) Extend *extend;
+@property (nonatomic, copy) NSString *lang;
+@property (nonatomic, strong) NSNumber *ptype;
+@property (nonatomic, assign) BOOL following;
+
+@end
+
+@interface Extend : JSONModel 
+
+@property (nonatomic, strong) Privacy *privacy;
+@property (nonatomic, copy) NSString *mbprivilege;
+
+@end
+
+@interface Privacy : JSONModel 
+
+@property (nonatomic, strong) NSNumber *mobile;
+
+@end
+
+@interface Badge : JSONModel 
+
+@property (nonatomic, strong) NSNumber *gongyi;
+@property (nonatomic, strong) NSNumber *gongyiLevel;
+@property (nonatomic, strong) NSNumber *enterprise;
+@property (nonatomic, strong) NSNumber *zongyiji;
+@property (nonatomic, strong) NSNumber *suishoupai2014;
+@property (nonatomic, strong) NSNumber *travel2013;
+@property (nonatomic, strong) NSNumber *anniversary;
+@property (nonatomic, strong) NSNumber *taobao;
+@property (nonatomic, strong) NSNumber *hongbao2014;
+@property (nonatomic, strong) NSNumber *dzwbqlv2015;
+@property (nonatomic, strong) NSNumber *ucDomain;
+@property (nonatomic, strong) NSNumber *bindTaobao;
+@property (nonatomic, strong) NSNumber *dailv;
+@property (nonatomic, strong) NSNumber *pzsd2015;
+
+@end
+
+@interface Icons : JSONModel 
+
+@property (nonatomic, copy) NSString *url;
+
+@end
+

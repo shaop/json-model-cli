@@ -18,7 +18,7 @@ describe('HandyJSON 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open( './resources/json1.swift' );
+        liner.open( './resources/handyJSON/json1.swift' );
         let theline;
         while( !liner._EOF )
         {
@@ -43,7 +43,7 @@ describe('HandyJSON 测试', function() {
 
         let liner = new LineByLine();
 
-        liner.open( './resources/json2.swift' );
+        liner.open( './resources/handyJSON/json2.swift' );
         let theline;
         while( !liner._EOF )
         {

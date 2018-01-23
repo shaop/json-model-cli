@@ -5,10 +5,6 @@ let path = require("path");
 let fs = require('fs');
 require('./../tool/letterTool');
 
-let res = '';
-let impRes = '';
-let prefix = '';
-
 Array.prototype.contains = function ( needle ) {
     for (i in this) {
         if (this[i] === needle) return true;
@@ -17,10 +13,16 @@ Array.prototype.contains = function ( needle ) {
 };
 
 let mjm = (function() {
+    let res = '';
+    let impRes = '';
+    let prefix = '';
+    let classNames = [];
+
     let execute = function(file_path,mprefix, ignore) {
         prefix = mprefix;
+        let data = JSON.parse(fs.readFileSync(file_path));
 
-        let context = getMJData(file_path, ignore);
+        let context = getMJData(data, path.basename(file_path,'.h'), ignore);
 
         // 写入.h
         fs.writeFile(file_path, context.hContext, function(err) {
@@ -39,19 +41,24 @@ let mjm = (function() {
     };
     /**
      * 获取数据
-     * @param file_path 文件路径
+     * @param data 文件路径
+     * @param className 类名
      * @param ignore 忽略文件
      * @returns {{hContext: string, mContext: string}}
      */
-    let getMJData = function(file_path, ignore){
-        let data = JSON.parse(fs.readFileSync(file_path));
-        doMJData(data, 0, path.basename(file_path,'.h'), ignore);
+    let getMJData = function(data, className, ignore) {
+        res = '';
+        impRes = '';
+        prefix = '';
+        classNames = [];
+
+        doMJData(data, 0, className, ignore);
 
         let header = '#import "MJExtension.h"\n\n';
         res = header + res;
 
         // 写import
-        impRes = '#import "'+path.basename(file_path)+'"\n\n' + impRes;
+        impRes = '#import "'+className+'.h"\n\n' + impRes;
 
         return {
             hContext: res,
@@ -82,16 +89,44 @@ let mjm = (function() {
                 mapper.push({key,value:CamelCase(key)});
             }
 
-
             if (data[key] instanceof Array) {
-                if (data[key][0] instanceof Object) {
-                    doMJData(data[key][0], index + 1, ClassCase(CamelCase(key), prefix), ignore);
-                    arrayDic.push({key: ClassCase(CamelCase(key)),value: CamelCase(key)});
+                class_block += '@property (nonatomic, strong) NSArray';
+                let x = data[key][0];
+                let count = 0;
+                // 为 Array 时重复判断内有多少个array
+                while (x instanceof Array) {
+                    class_block += '<NSArray';
+                    count ++;
+                    x = x[0];
                 }
-                class_block += '@property (nonatomic, strong) NSArray *' + CamelCase(key) +';\n';
+
+                // 判断各类数据，做不同处理
+                if (x instanceof Object) {
+                    // 排除出现一样的类名，如果一样，后面加个 X
+                    let mclassName = ClassCase(CamelCase(key),prefix);
+                    while (classNames.contains(mclassName)) {
+                        mclassName = mclassName + 'X';
+                    }
+                    classNames.push(mclassName);
+                    arrayDic.push({key: mclassName, value: CamelCase(key)});
+                    doMJData(x, index + 1, mclassName,ignore);
+                    class_block += '<' + mclassName + ' *>';
+                }
+
+                for (let i =0; i<count; i++ ){
+                    class_block += ' *>';
+                }
+
+                class_block += ' *' + CamelCase(key) +';\n';
             } else if (data[key] instanceof Object) {
-                doMJData(data[key], index + 1, ClassCase(CamelCase(key),prefix), ignore);
-                class_block += '@property (nonatomic, strong) ' + ClassCase(CamelCase(key),prefix) + ' *' + CamelCase(key) +';\n';
+                // 排除出现一样的类名，如果一样，后面加个 X
+                let mclassName = ClassCase(CamelCase(key));
+                while (classNames.contains(mclassName)) {
+                    mclassName = mclassName + 'X';
+                }
+                classNames.push(mclassName);
+                doMJData(data[key], index + 1, mclassName, ignore);
+                class_block += '@property (nonatomic, strong) ' + mclassName + ' *' + CamelCase(key) +';\n';
             } else if (typeof data[key] === 'string') {
                 class_block += '@property (nonatomic, copy) NSString' + ' *' + CamelCase(key) +';\n';
             } else if (typeof data[key] === 'number') {
@@ -127,9 +162,9 @@ let mjm = (function() {
             mimpRes += '\n+ (NSDictionary *)mj_objectClassInArray {\n    return @{';
             for (let i = 0; i < arrayDic.length; i ++) {
                 if (i === 0){
-                    mimpRes  += '@"' + arrayDic[i].value + '" : [' + arrayDic[i].key+' class]';
+                    mimpRes  += '@"' + arrayDic[i].value + '" : @"' + arrayDic[i].key+'"';
                 }else {
-                    mimpRes  += ',\n             @"' + arrayDic[i].value + '" : [' + arrayDic[i].key+' class]';
+                    mimpRes  += ',\n             @"' + arrayDic[i].value + '" : @"' + arrayDic[i].key+'"';
                 }
             }
             mimpRes += '\n      };\n}\n';
@@ -139,7 +174,8 @@ let mjm = (function() {
 
     };
     return {
-        execute
+        execute,
+        getMJData
     }
 }) ();
 
