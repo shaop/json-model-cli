@@ -1,5 +1,5 @@
 {
-  "name": "json-maker",
+  "name": "json-model-cli",
   "version": "0.0.1",
   "description": "make you json to model easier",
   "main": "index.js",

@@ -15,8 +15,8 @@ function list(val) {
 
 program
     .version('0.1.0')
-    .option('-i, --input <path>', 'input file (include .h .swift)')
-    .option('-I, --input <path>', 'input file (include .h .swift)')
+    .option('-i, --input <path>', 'input file path(include .h .swift)')
+    .option('-I, --input <path>', 'input file path(include .h .swift)')
     .option('-e, --except [value]', 'input an array that requires ignore, list by ","', list,[]);
 
 program.on('--help', function(){
