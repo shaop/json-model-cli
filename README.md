@@ -52,3 +52,6 @@ json-model-cli supports some arguments, you could find it by:
 
     $ jm -i ./test.h -e pic_infos
 ```
+
+## License
+json-model-cli is provided under the MIT license.
