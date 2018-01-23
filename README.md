@@ -2,7 +2,7 @@
 
 > generate models in a simpler way
 
-![preview](http://7xkl1p.com1.z0.glb.clouddn.com/json-model-cli%202.gif)
+![preview](http://7xkl1p.com1.z0.glb.clouddn.com/model-json-cli.gif)
 
 ## Now 
 json-model-cli supports for these model library
